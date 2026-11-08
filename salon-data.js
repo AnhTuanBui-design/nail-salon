@@ -85,12 +85,18 @@ var SALON = {
       ] }
   ],
 
-  // [name, colour, finish]
+  // [name, colour, finish, family]. The homepage shows the first 12.
+  shadeFamilies: ["Nudes", "Pinks", "Reds", "Browns", "Purples", "Blues & greens", "Metallics", "Darks"],
   shades: [
-    ["Bare Silk", "#E9CDBE", "Cream"], ["Oatmeal", "#D8C0A5", "Cream"], ["Rosewater", "#EDBFC2", "Sheer"],
-    ["Petal Hour", "#D98A9A", "Cream"], ["Berry Velvet", "#8E2344", "Cream"], ["Persimmon", "#D2563F", "Gloss"],
-    ["Cinnamon Tea", "#8A4B32", "Cream"], ["Sage Leaf", "#9AAA8C", "Cat-eye"], ["Lagoon", "#2F6F73", "Shimmer"],
-    ["Night Orchid", "#4B2B4F", "Shimmer"], ["Gilded", "#C9A96A", "Chrome"], ["Ink", "#1F1B24", "Cream"]
+    ["Bare Silk", "#E9CDBE", "Cream", "Nudes"], ["Oatmeal", "#D8C0A5", "Cream", "Nudes"], ["Rosewater", "#EDBFC2", "Sheer", "Pinks"],
+    ["Petal Hour", "#D98A9A", "Cream", "Pinks"], ["Berry Velvet", "#8E2344", "Cream", "Reds"], ["Persimmon", "#D2563F", "Gloss", "Reds"],
+    ["Cinnamon Tea", "#8A4B32", "Cream", "Browns"], ["Sage Leaf", "#9AAA8C", "Cat-eye", "Blues & greens"], ["Lagoon", "#2F6F73", "Shimmer", "Blues & greens"],
+    ["Night Orchid", "#4B2B4F", "Shimmer", "Purples"], ["Gilded", "#C9A96A", "Chrome", "Metallics"], ["Ink", "#1F1B24", "Cream", "Darks"],
+    ["Linen Veil", "#E6D3C3", "Sheer", "Nudes"], ["Toasted Almond", "#C9A587", "Cream", "Nudes"], ["Ballet Slip", "#F2CFD3", "Sheer", "Pinks"],
+    ["Peony Blush", "#E79AB0", "Cream", "Pinks"], ["Cherry Lacquer", "#A3152B", "Gloss", "Reds"], ["Coral Reef", "#EE7B62", "Cream", "Reds"],
+    ["Mocha Latte", "#8C6A56", "Cream", "Browns"], ["Espresso Bean", "#4A2E25", "Cream", "Browns"], ["Lilac Hour", "#B9A2D0", "Cream", "Purples"],
+    ["Plum Wine", "#5E2A4A", "Shimmer", "Purples"], ["Harbour Navy", "#1F2A44", "Cream", "Blues & greens"], ["Olive Grove", "#6B6B3A", "Cream", "Blues & greens"],
+    ["Silver Screen", "#C8C9CE", "Chrome", "Metallics"], ["Rose Gold", "#D4A08F", "Chrome", "Metallics"], ["Smoke", "#3B3A3F", "Cat-eye", "Darks"]
   ]
 };
 

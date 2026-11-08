@@ -37,7 +37,7 @@
   /* Shade picker */
   var grid = document.getElementById("shadeGrid"), pickedText = document.getElementById("pickedText"), shadeBtns = [];
   if (grid) {
-    SALON.shades.forEach(function (s) {
+    SALON.shades.slice(0, 12).forEach(function (s) {
       var b = el("button", "shade"); b.type = "button"; b.setAttribute("aria-pressed", "false");
       var chip = el("span", "chip"); chip.style.setProperty("--c", s[1]);
       b.append(chip, el("b", null, s[0]), el("span", null, s[2]));
