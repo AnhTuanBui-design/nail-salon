@@ -4,6 +4,8 @@ Website for Pedi N Nails Howard, a nail salon in Toronto. Calm, editorial style:
 
 Plain HTML, CSS and JavaScript. No build step and nothing to install.
 
+**Live (draft):** https://anhtuanbui-design.github.io/nail-salon/
+
 ## Pages
 
 | Page | File |
@@ -70,15 +72,18 @@ Contact details are written straight into the pages. Search all `.html` files fo
 - [ ] Reviews and the Google rating (currently marked "Sample")
 - [ ] Photos: every grey-beige box marked "Your photo" (`class="ph"`) needs a real photo, using `<img src="..." alt="...">`
 - [ ] Booking link
-- [ ] Remove the "Draft homepage" bar at the top once everything is confirmed
+- [ ] Remove the "Draft" bar at the top of each page once everything is confirmed
+- [ ] Remove the `<meta name="robots" content="noindex">` line from every page so Google can list the site
 
 ## Hosting
 
-GitHub Pages on a private repository needs a paid GitHub plan. Netlify and Vercel both host private repositories for free:
+The site is on **GitHub Pages**, published from the `main` branch, root folder (repository Settings → Pages). Every push to `main` updates the live site within a minute or two.
 
-1. Import this repository.
-2. Leave the build command empty and set the publish directory to the repository root.
-3. Connect the domain in the host's settings.
+- Live address: https://anhtuanbui-design.github.io/nail-salon/
+- `.nojekyll` tells GitHub to serve the files as they are, with no Jekyll build.
+- While the content is placeholder, every page has a `noindex` tag so search engines don't list it.
+
+To use your own domain (for example `pedinnailshoward.com`): buy it from any registrar, enter it under Settings → Pages → Custom domain, then add the DNS records GitHub shows you at the registrar. Keep "Enforce HTTPS" ticked.
 
 ## Status
 
