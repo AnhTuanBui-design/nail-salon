@@ -8,8 +8,13 @@ Plain HTML, CSS and JavaScript. No build step and nothing to install.
 
 | File | What it is |
 |---|---|
-| `index.html` | The homepage |
-| `blueprint.html` | The website plan: sitemap, every page, booking flow, design direction, and a prompt pack for building the remaining pages with AI |
+| `index.html` | Homepage |
+| `services.html` | Services & prices: full menu by category, plus a "plan your visit" total |
+| `salon-data.js` | **Salon data**: hours, services, prices, shades, booking link. Both pages read from it |
+| `styles.css` | Shared styles for every page |
+| `site.js` | Shared behaviour: mobile menu, booking links, opening hours and "Open now" |
+| `home.js`, `services.js` | Page-specific scripts |
+| `blueprint.html` | The website plan: sitemap, every page, booking flow, design direction and an AI prompt pack |
 
 ## Preview
 
@@ -23,14 +28,14 @@ Then go to http://localhost:8000.
 
 ## Edit salon details
 
-Most of the data is in one block near the bottom of `index.html`, marked `SALON DATA`:
+Hours, services and prices live in **`salon-data.js`**. Change them once and both pages update:
 
 - `bookingUrl`: paste the Fresha, Square, Vagaro or Booksy booking link. Every Book button then opens it.
 - `hours`: opening hours for each day. The "Open now / Closed" label uses the Toronto time zone.
-- `menu`: service categories, services, minutes and prices.
-- `shades`: the colour swatches in the Shades section.
+- `menu`: categories and services. Each service has a name, minutes, price, a one-line description, and `from: true` when the price depends on length or design.
+- `shades`: the colour swatches on the homepage.
 
-The rest is written straight into the page. Search `index.html` for these:
+Contact details are written straight into the pages. Search `index.html` and `services.html` for these:
 
 - `Street address`: the address (in the Visit section and the footer)
 - `(416) 555-0142` and `tel:+14165550142`: the phone number
@@ -58,4 +63,6 @@ GitHub Pages on a private repository needs a paid GitHub plan. Netlify and Verce
 
 ## Next pages
 
-Build them in this order, using the prompt pack in `blueprint.html`: Services & Pricing, Book, Gallery, Contact, then Team, Gift Cards, Shade Picker, Journal, About and FAQ.
+Done: Home, Services & Prices.
+
+Still to build, in this order (prompts are in `blueprint.html`): Book, Gallery, Contact, then Team, Gift Cards, Shade Picker, Journal, About and FAQ.

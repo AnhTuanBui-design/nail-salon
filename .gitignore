@@ -11,3 +11,6 @@ node_modules/
 dist/
 .netlify/
 .vercel/
+
+# Local editor/agent config
+.claude/
