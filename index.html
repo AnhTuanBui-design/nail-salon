@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pedi N Nails Howard</title>
+<meta name="description" content="Manicures, pedicures, Gel-X, acrylics and nail art in Toronto. Book online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* Layout: quiet editorial salon site. Full-bleed bands alternate linen and sand; content sits in one 1160px column, headlines left-aligned, hairlines instead of boxes. Single warm-light look by design. */
+:root{
+  --paper:#FBF8F3;     /* header, cards */
+  --linen:#F6F1E8;     /* main background */
+  --sand:#ECE4D6;      /* alternate bands */
+  --ink:#2B221D;       /* headlines */
+  --taupe:#75665B;     /* body text */
+  --espresso:#45302A;  /* Book buttons */
+  --gold:#AE8F5C;      /* hairline accents, arrows */
+  --line:#DED3C2;
+  --on-dark:#FBF6EF;
+  --open:#3F7A5A; --closed:#9A4B3E;
+  --f-display:"Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --f-body:"Jost", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  --gutter:max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(16px, env(safe-area-inset-right, 0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--linen);color:var(--taupe);font-family:var(--f-body);font-weight:300;font-size:17px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:40;background:var(--paper)}
+.wrap{max-width:1160px;margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter-r)}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;color:var(--ink);margin:0;line-height:1.05;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(2.9rem, 7vw, 5.4rem)}
+h2{font-size:clamp(2.3rem, 4.6vw, 3.6rem)}
+h3{font-size:1.6rem;line-height:1.15}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.label{display:flex;align-items:center;gap:12px;font-family:var(--f-body);font-weight:500;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--taupe)}
+.label::before{content:"";width:28px;height:1px;background:var(--gold)}
+.lede{max-width:56ch;font-size:1.06rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--f-body);font-weight:500;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:15px 26px;border:1px solid var(--espresso);cursor:pointer;transition:background .2s, color .2s}
+.btn-solid{background:var(--espresso);color:var(--on-dark)}
+.btn-solid:hover{background:var(--ink)}
+.btn-line{background:transparent;color:var(--espresso)}
+.btn-line:hover{background:var(--espresso);color:var(--on-dark)}
+.btn-light{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.btn-light:hover{background:transparent;color:var(--on-dark);border-color:var(--on-dark)}
+.link-arrow{font-weight:500;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:4px}
+.link-arrow:hover{color:var(--espresso)}
+
+/* demo notice */
+.demo{background:var(--ink);color:var(--on-dark);font-size:.8rem;text-align:center}
+.demo .wrap{padding-block:7px}
+
+/* header */
+.site-head{position:sticky;top:env(safe-area-inset-top, 0px);z-index:30;background:var(--paper);border-bottom:1px solid var(--line)}
+.site-head .wrap{display:flex;align-items:center;gap:28px;padding-block:14px}
+.brand{text-decoration:none;display:grid;line-height:1.1;flex:none}
+.brand b{font-family:var(--f-display);font-weight:500;font-size:1.55rem;letter-spacing:.12em;color:var(--ink)}
+.brand span{font-size:.64rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--taupe)}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{font-size:.9rem;font-weight:400;color:var(--ink);text-decoration:none;padding-block:4px;border-bottom:1px solid transparent}
+.nav a:hover{border-color:var(--gold)}
+.head-actions{display:flex;align-items:center;gap:20px}
+.head-actions .gift{font-size:.9rem;color:var(--ink);text-decoration:none}
+.head-actions .btn{padding:12px 20px}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--ink);font:500 .72rem var(--f-body);letter-spacing:.16em;text-transform:uppercase;padding:10px 14px;cursor:pointer}
+.mobile-nav{border-top:1px solid var(--line);background:var(--paper)}
+.mobile-nav .wrap{display:grid;padding-block:8px 18px}
+.mobile-nav a{font-family:var(--f-display);font-size:1.6rem;color:var(--ink);text-decoration:none;padding-block:8px;border-bottom:1px solid var(--line)}
+
+/* photo placeholders: abstract hands drawn in CSS, replace with real photography */
+.ph{position:relative;overflow:hidden;background:radial-gradient(120% 95% at 72% 22%, var(--b1, #E9DCCB), var(--b2, #BFA690));max-width:100%}
+.hand{position:absolute;left:var(--x, 30%);bottom:var(--y, -16%);width:var(--w, 46%);aspect-ratio:1 / 1.15;display:flex;align-items:flex-end;gap:5%;transform:rotate(var(--r, -14deg));transform-origin:bottom center}
+.hand i{flex:1;position:relative;border-radius:999px 999px 30% 30%;background:linear-gradient(90deg, #C5937B, #EBC7B2 46%, #D2A38B);box-shadow:inset -3px 0 6px rgba(120,70,50,.18)}
+.hand i:nth-child(1){height:80%}
+.hand i:nth-child(2){height:100%}
+.hand i:nth-child(3){height:94%}
+.hand i:nth-child(4){height:72%}
+.hand i::before{content:"";position:absolute;left:13%;right:13%;top:3%;height:var(--nail, 34%);border-radius:50% 50% 44% 44% / 74% 74% 26% 26%;
+  background:linear-gradient(155deg, rgba(255,255,255,.62), rgba(255,255,255,0) 38%), var(--polish, #E6C3B5);box-shadow:0 1px 2px rgba(60,30,20,.25)}
+.tag{position:absolute;left:12px;bottom:12px;font-size:.62rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:rgba(251,248,243,.82);padding:4px 8px}
+
+/* hero */
+.hero{position:relative;color:var(--on-dark);overflow:hidden}
+.hero .ph{position:absolute;inset:0;--b1:#D9C2AE;--b2:#6E5444}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(36,24,18,.72) 0%, rgba(36,24,18,.42) 45%, rgba(36,24,18,.08) 100%)}
+.hero .hand{--x:58%;--w:34%;--r:-20deg;--y:-30%;--polish:#E8C9BA;--nail:36%}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(88px, 13vw, 150px) clamp(76px, 11vw, 128px);display:grid;gap:24px}
+.hero .label{color:var(--on-dark)}
+.hero h1{color:var(--on-dark);max-width:12ch}
+.hero h1 em{font-style:italic}
+.hero p.lede{color:rgba(251,246,239,.86);max-width:44ch}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.hero .tag{z-index:1;left:auto;right:calc(var(--gutter-r) + 4px)}
+
+/* category strip */
+.cats{background:var(--paper);border-bottom:1px solid var(--line)}
+.cats .wrap{display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+.cats a{display:flex;align-items:center;justify-content:center;gap:10px;padding-block:22px;text-decoration:none;color:var(--ink);font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;border-right:1px solid var(--line)}
+.cats a:last-child{border-right:0}
+.cats a:hover{color:var(--espresso);background:var(--linen)}
+.cats svg{width:18px;height:18px;flex:none;stroke:var(--gold);fill:none;stroke-width:1.3}
+
+/* sections */
+.band{padding-block:clamp(72px, 9vw, 120px)}
+.band.sand{background:var(--sand)}
+.band.paper{background:var(--paper)}
+.sec-head{display:grid;gap:18px;margin-bottom:clamp(36px, 5vw, 56px)}
+.sec-head.split{grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:18px 40px}
+.sec-head.split > div{display:grid;gap:18px;min-width:0}
+
+/* menu */
+.menu{border-top:1px solid var(--line)}
+.row{border-bottom:1px solid var(--line)}
+.row-btn{width:100%;display:grid;grid-template-columns:56px minmax(0,1.1fr) minmax(0,1.3fr) auto;gap:24px;align-items:center;text-align:left;background:none;border:0;padding:30px 0;cursor:pointer;font:inherit;color:inherit}
+.row-btn:hover h3{color:var(--espresso)}
+.row .num{font-size:.74rem;font-weight:500;letter-spacing:.14em;color:var(--gold);font-variant-numeric:tabular-nums}
+.row p{font-size:.98rem}
+.row .from{font-family:var(--f-display);font-size:1.3rem;color:var(--ink);white-space:nowrap;display:flex;align-items:center;gap:14px}
+.row .arrow{color:var(--gold);transition:transform .25s;font-family:var(--f-body);font-size:1rem}
+.row.open .arrow{transform:rotate(90deg)}
+.items{padding:0 0 30px 80px;display:grid;gap:0}
+.item{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:24px;padding-block:12px;border-top:1px dashed var(--line);font-size:.98rem}
+.item:first-child{border-top:0}
+.item b{font-weight:400;color:var(--ink)}
+.item span{font-variant-numeric:tabular-nums;white-space:nowrap}
+.item .price{color:var(--ink);font-weight:500;min-width:4.5em;text-align:right}
+.menu-foot{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between;margin-top:34px;font-size:.92rem}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:1.55fr 1fr 1fr;grid-template-rows:auto auto;gap:18px}
+.shot{display:grid;gap:10px;align-content:start;margin:0;min-width:0}
+.shot .ph{aspect-ratio:4 / 5}
+.shot.big{grid-row:span 2}
+.shot.big .ph{aspect-ratio:auto;height:100%;min-height:420px}
+.shot figcaption{font-size:.88rem;line-height:1.5}
+.insta{display:inline-flex;align-items:center;gap:10px}
+.insta svg{width:16px;height:16px;stroke:var(--ink);fill:none;stroke-width:1.4}
+
+/* salon */
+.room{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.room figure{margin:0;display:grid;gap:14px;align-content:start;min-width:0}
+.room .ph{aspect-ratio:4 / 3}
+.room h3{font-size:.74rem;font-family:var(--f-body);font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+.room p{font-size:.95rem}
+.hours-line{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;font-size:.95rem}
+.hours-line b{font-weight:500;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+
+/* shades */
+.shades{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:22px 18px}
+.shade{background:none;border:0;padding:0;cursor:pointer;display:grid;gap:10px;justify-items:start;text-align:left;font:inherit;color:inherit;min-width:0}
+.chip{width:100%;aspect-ratio:3 / 4;max-width:100%;border-radius:46% 46% 40% 40% / 58% 58% 42% 42%;background:linear-gradient(150deg, rgba(255,255,255,.5), rgba(255,255,255,0) 40%), var(--c);
+  box-shadow:inset 0 -8px 16px rgba(0,0,0,.08), 0 1px 0 var(--line);transition:transform .2s}
+.shade:hover .chip{transform:translateY(-3px)}
+.shade[aria-pressed="true"] .chip{outline:1px solid var(--ink);outline-offset:5px}
+.shade b{font-family:var(--f-display);font-weight:500;font-size:1.15rem;color:var(--ink);line-height:1.1}
+.shade span{font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+.picked{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;padding:20px 24px;background:var(--paper);border:1px solid var(--line)}
+.picked p{font-size:.98rem}
+.picked p b{font-family:var(--f-display);font-size:1.3rem;font-weight:500;color:var(--ink)}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.review{display:grid;gap:18px;align-content:start;min-width:0}
+.stars{color:var(--gold);letter-spacing:.2em;font-size:.9rem}
+.review blockquote{margin:0;font-family:var(--f-display);font-size:1.45rem;line-height:1.3;color:var(--ink)}
+.review cite{font-style:normal;font-size:.78rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+.rating{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
+.rating b{font-family:var(--f-display);font-size:2.6rem;font-weight:400;color:var(--ink);line-height:1}
+
+/* journal */
+.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.post{display:grid;gap:14px;align-content:start;text-decoration:none;min-width:0}
+.post .ph{aspect-ratio:16 / 10}
+.post .cat{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.post h3{transition:color .2s}
+.post:hover h3{color:var(--espresso)}
+.post p{font-size:.95rem}
+.post .time{font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr);gap:48px}
+.faq-grid .sec-head{margin:0;align-content:start}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding-block:22px;font-family:var(--f-display);font-size:1.45rem;color:var(--ink);line-height:1.2}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--f-body);font-weight:300;font-size:1.4rem;color:var(--gold);flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding-bottom:22px;max-width:60ch}
+
+/* visit */
+.visit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px, 6vw, 80px)}
+.visit .addr{font-family:var(--f-display);font-size:1.7rem;color:var(--ink);line-height:1.25}
+.contact-list{display:grid;gap:6px;font-size:1rem}
+.contact-list a{text-decoration:none;border-bottom:1px solid var(--line)}
+.contact-list a:hover{border-color:var(--gold)}
+.visit .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.visit-info{display:grid;gap:26px;align-content:start}
+.hours{width:100%;border-collapse:collapse;font-size:1rem;font-variant-numeric:tabular-nums}
+.hours td{padding-block:13px;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right}
+.hours tr.today td{color:var(--ink);font-weight:500}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--dot, var(--taupe))}
+.status.is-open{--dot:var(--open)}
+.status.is-closed{--dot:var(--closed)}
+.hours-head{display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;align-items:center;margin-bottom:6px}
+
+/* footer */
+footer{background:var(--ink);color:rgba(251,246,239,.72);font-size:.92rem}
+footer .wrap{padding-block:64px 40px;display:grid;gap:40px}
+.foot-top{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:32px}
+footer .brand b{color:var(--on-dark)}
+footer .brand span{color:rgba(251,246,239,.6)}
+footer h4{margin:0 0 12px;font-weight:500;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark)}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--on-dark)}
+.foot-bottom{border-top:1px solid rgba(251,246,239,.16);padding-top:22px;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;font-size:.82rem}
+
+/* mobile action bar */
+.action-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:35;background:var(--paper);border-top:1px solid var(--line);
+  padding:10px var(--gutter-r) calc(10px + env(safe-area-inset-bottom, 0px)) var(--gutter);gap:10px}
+.action-bar .btn{flex:1;padding:14px 10px}
+
+@media (max-width:1020px){
+  .nav,.head-actions .gift{display:none}
+  .menu-btn{display:inline-block}
+  .head-actions{margin-left:auto}
+  .cats .wrap{display:flex;overflow-x:auto;scrollbar-width:none}
+  .cats a{flex:none;padding-inline:22px}
+  .shades{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .foot-top{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .head-actions .btn{display:none}
+  .row-btn{grid-template-columns:36px minmax(0,1fr) auto;gap:6px 14px;padding:24px 0}
+  .row-btn p{grid-column:2 / 4;grid-row:2}
+  .items{padding-left:0}
+  .item{grid-template-columns:minmax(0,1fr) auto;gap:2px 16px}
+  .item .dur{grid-row:2;font-size:.85rem}
+  .item .price{grid-row:1 / 3;grid-column:2;align-self:center}
+  .gallery{grid-template-columns:1fr 1fr}
+  .shot.big{grid-column:1 / -1;grid-row:auto}
+  .shot.big .ph{aspect-ratio:4 / 5;height:auto;min-height:0}
+  .room,.reviews,.posts,.faq-grid,.visit{grid-template-columns:1fr}
+  .reviews{gap:36px}
+  .shades{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sec-head.split{grid-template-columns:1fr}
+  .action-bar{display:flex}
+  footer .wrap{padding-bottom:calc(110px + env(safe-area-inset-bottom, 0px))}
+  .foot-top{grid-template-columns:1fr 1fr}
+  .foot-top > div:first-child{grid-column:1 / -1}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo"><div class="wrap">Draft homepage. Address, phone, email, hours, prices and reviews are placeholders until confirmed.</div></div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Pedi N Nails Howard, home"><b>PEDI N NAILS</b><span>Howard · Toronto</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#menu">Services</a>
+      <a href="#work">Gallery</a>
+      <a href="#shades">Shades</a>
+      <a href="#journal">Journal</a>
+      <a href="#faq">FAQ</a>
+      <a href="#visit">Contact</a>
+    </nav>
+    <div class="head-actions">
+      <a class="gift" href="#visit">E-Gift Cards</a>
+      <a class="btn btn-solid" data-book href="#visit">Book now</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile" hidden>
+    <div class="wrap">
+      <a href="#menu">Services</a>
+      <a href="#work">Gallery</a>
+      <a href="#shades">Shades</a>
+      <a href="#journal">Journal</a>
+      <a href="#faq">FAQ</a>
+      <a href="#visit">Contact &amp; hours</a>
+      <a href="#visit">E-Gift Cards</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" aria-label="Welcome">
+  <div class="ph" aria-hidden="true"><div class="hand"><i></i><i></i><i></i><i></i></div></div>
+  <span class="tag" style="position:absolute;bottom:14px">Hero photo · replace with yours</span>
+  <div class="wrap">
+    <p class="label">Pedi N Nails · Toronto</p>
+    <h1>Nails done with care. <em>An hour just for you.</em></h1>
+    <p class="lede">Manicures, pedicures, Gel-X, acrylics and nail art in Toronto. Book online in about a minute.</p>
+    <div class="ctas">
+      <a class="btn btn-light" data-book href="#visit">Book your appointment</a>
+      <a class="btn btn-line" style="color:var(--on-dark);border-color:rgba(251,246,239,.7)" href="#menu">See services &amp; prices</a>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY STRIP -->
+<nav class="cats" aria-label="Service categories">
+  <div class="wrap">
+    <a href="#menu" data-open="0"><svg viewBox="0 0 20 20"><rect x="6" y="2.5" width="8" height="15" rx="4"/><path d="M7.5 7h5"/></svg>Manicure</a>
+    <a href="#menu" data-open="1"><svg viewBox="0 0 20 20"><path d="M10 2.5c3 4 5 6.6 5 9.2a5 5 0 0 1-10 0c0-2.6 2-5.2 5-9.2z"/></svg>Pedicure</a>
+    <a href="#menu" data-open="2"><svg viewBox="0 0 20 20"><path d="M10 2.5l5 7.5-5 7.5-5-7.5z"/></svg>Enhancements</a>
+    <a href="#menu" data-open="3"><svg viewBox="0 0 20 20"><path d="M4 16l8-8M11 5l4 4M13 3l4 4-2 2-4-4z"/></svg>Nail art</a>
+    <a href="#menu" data-open="4"><svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg>Add-ons</a>
+    <a href="#menu" data-open="5"><svg viewBox="0 0 20 20"><path d="M4 16c0-7 5-12 12-12 0 7-5 12-12 12zM4 16l7-7"/></svg>Waxing</a>
+  </div>
+</nav>
+
+<!-- MENU -->
+<section class="band" id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">The menu</p>
+      <h2>Clear prices, before you sit down.</h2>
+      <p class="lede">Every service and price is listed here, so you know exactly what you are booking. Tap a category to see the full list.</p>
+    </div>
+    <div class="menu" id="menuList"></div>
+    <div class="menu-foot">
+      <p>Prices marked “from” depend on length and design. Your technician will confirm before starting.</p>
+      <a class="btn btn-solid" data-book href="#visit">Book a service</a>
+    </div>
+  </div>
+</section>
+
+<!-- NAIL WORK -->
+<section class="band paper" id="work">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div>
+        <p class="label">Recent sets</p>
+        <h2>Small details, done properly.</h2>
+        <p class="lede">French, chrome, cat-eye, ombré and hand-painted art. Designs start at $5 and are priced by detail.</p>
+      </div>
+      <a class="link-arrow insta" href="https://www.instagram.com/" target="_blank" rel="noopener"><svg viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.2"/></svg>@pedinnailshoward</a>
+    </div>
+    <div class="gallery">
+      <figure class="shot big">
+        <div class="ph" style="--b1:#EADBD0;--b2:#A88B7A" aria-hidden="true"><div class="hand" style="--x:24%;--w:52%;--r:-12deg;--y:-14%;--polish:#F1D9D3;--nail:40%"><i></i><i></i><i></i><i></i></div><span class="tag">Your photo</span></div>
+        <figcaption>Long almond nails in milky pink with hand-painted white florals and tiny gold beads.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="ph" style="--b1:#D8D4D2;--b2:#5E5654" aria-hidden="true"><div class="hand" style="--x:26%;--w:56%;--r:-18deg;--polish:#C9C9CF;--nail:42%"><i></i><i></i><i></i><i></i></div><span class="tag">Your photo</span></div>
+        <figcaption>Silver chrome stilettos with a smoky black fade.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="ph" style="--b1:#F0DCCB;--b2:#C27E62" aria-hidden="true"><div class="hand" style="--x:22%;--w:58%;--r:-8deg;--polish:#D2563F"><i></i><i></i><i></i><i></i></div><span class="tag">Your photo</span></div>
+        <figcaption>Short square gel in a warm persimmon red.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="ph" style="--b1:#E3E6DA;--b2:#8E9C83" aria-hidden="true"><div class="hand" style="--x:24%;--w:56%;--r:-16deg;--polish:#9AAA8C"><i></i><i></i><i></i><i></i></div><span class="tag">Your photo</span></div>
+        <figcaption>Soft sage cat-eye on oval nails.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="ph" style="--b1:#EFE3D8;--b2:#B49580" aria-hidden="true"><div class="hand" style="--x:24%;--w:56%;--r:-12deg;--polish:#F3EAE2;--nail:38%"><i></i><i></i><i></i><i></i></div><span class="tag">Your photo</span></div>
+        <figcaption>Micro French tips on a sheer nude base.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- THE SALON -->
+<section class="band" id="salon">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">The salon</p>
+      <h2>A quiet room in Toronto.</h2>
+      <p class="lede">Soft light, unhurried appointments and tools sterilized after every client. Come in, sit down, and take the hour.</p>
+    </div>
+    <div class="room">
+      <figure>
+        <div class="ph" style="--b1:#EDE3D6;--b2:#A99480" aria-hidden="true"><span class="tag">Photo of manicure stations</span></div>
+        <h3>Manicure stations</h3>
+        <p>Six stations facing the polish wall, so you can choose your shade from your seat.</p>
+      </figure>
+      <figure>
+        <div class="ph" style="--b1:#E6DDD0;--b2:#8F7B69" aria-hidden="true"><span class="tag">Photo of pedicure chairs</span></div>
+        <h3>Pedicure lounge</h3>
+        <p>Deep chairs with massage, warm soaks and fresh, single-use liners for every guest.</p>
+      </figure>
+      <figure>
+        <div class="ph" style="--b1:#F0E5DA;--b2:#B79A86" aria-hidden="true"><span class="tag">Photo of polish wall</span></div>
+        <h3>Clean by habit</h3>
+        <p>Metal tools are sterilized after every client. Files and buffers are single-use.</p>
+      </figure>
+    </div>
+    <div class="hours-line"><b>Open seven days</b><span id="hoursSummary">Mon–Sat 9:30–7:30 · Sun 10–6</span><span class="status" id="statusInline">Checking hours…</span></div>
+  </div>
+</section>
+
+<!-- SHADES -->
+<section class="band sand" id="shades">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div>
+        <p class="label">Colour</p>
+        <h2>Pick your shade at home.</h2>
+        <p class="lede">Choose a tone and finish before you arrive, then tell your technician. These swatches are a guide; the shades on our polish wall may differ slightly.</p>
+      </div>
+    </div>
+    <div class="shades" id="shadeGrid"></div>
+    <div class="picked" id="picked">
+      <p id="pickedText">Tap a shade to choose it.</p>
+      <a class="btn btn-solid" data-book href="#visit">Book with this shade</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="band paper" id="reviews">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div>
+        <p class="label">Kind words</p>
+        <h2>What clients tell us.</h2>
+      </div>
+      <div class="rating"><b>4.9</b><span>Google rating · sample figure</span></div>
+    </div>
+    <div class="reviews">
+      <figure class="review">
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote>My Gel-X set lasted three and a half weeks without a single lift. Linh took her time and the shape is perfect.</blockquote>
+        <cite>Sample review · Jenny T.</cite>
+      </figure>
+      <figure class="review">
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote>The calmest pedicure I have had in years. Spotless stations and nobody rushed me out the door.</blockquote>
+        <cite>Sample review · Maria G.</cite>
+      </figure>
+      <figure class="review">
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote>Brought a photo from Instagram and they matched it exactly. Prices were what the website said.</blockquote>
+        <cite>Sample review · Alexis P.</cite>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNAL -->
+<section class="band" id="journal">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div>
+        <p class="label">Journal</p>
+        <h2>Notes from the studio.</h2>
+        <p class="lede">Short guides to help you choose the right service, shape and finish.</p>
+      </div>
+      <a class="link-arrow" href="#journal">Read the journal →</a>
+    </div>
+    <div class="posts">
+      <a class="post" href="#journal">
+        <div class="ph" style="--b1:#F1E1DA;--b2:#C49A8A" aria-hidden="true"><div class="hand" style="--x:34%;--w:34%;--r:-10deg;--y:-30%;--polish:#D98A9A"><i></i><i></i><i></i><i></i></div></div>
+        <span class="cat">Booking guide</span>
+        <h3>Gel or regular polish? How to choose in two minutes</h3>
+        <p>How long each lasts, how removal works, and which one suits your week.</p>
+        <span class="time">3 min read</span>
+      </a>
+      <a class="post" href="#journal">
+        <div class="ph" style="--b1:#ECE2D8;--b2:#9E8574" aria-hidden="true"><div class="hand" style="--x:34%;--w:34%;--r:-14deg;--y:-30%;--polish:#E9CDBE;--nail:44%"><i></i><i></i><i></i><i></i></div></div>
+        <span class="cat">Enhancements</span>
+        <h3>Acrylic, Gel-X or dip: which one is right for you?</h3>
+        <p>Strength, feel, upkeep and price, compared side by side.</p>
+        <span class="time">4 min read</span>
+      </a>
+      <a class="post" href="#journal">
+        <div class="ph" style="--b1:#E2DCE3;--b2:#7E6C82" aria-hidden="true"><div class="hand" style="--x:34%;--w:34%;--r:-18deg;--y:-30%;--polish:#4B2B4F;--nail:40%"><i></i><i></i><i></i><i></i></div></div>
+        <span class="cat">Nail care</span>
+        <h3>Almond, square, coffin: finding your nail shape</h3>
+        <p>What each shape says, and which ones hold up best for everyday life.</p>
+        <span class="time">4 min read</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="band paper" id="faq">
+  <div class="wrap faq-grid">
+    <div class="sec-head">
+      <p class="label">Questions</p>
+      <h2>Before you book.</h2>
+      <p class="lede">Can't find your answer? Call us at <span class="phone-text">(416) 555-0142</span>.</p>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Do I need an appointment?</summary>
+        <p>Booking online is the surest way to get the time and technician you want. Walk-ins are welcome when a chair is free; call ahead to check same-day availability.</p>
+      </details>
+      <details>
+        <summary>Do nail designs cost extra?</summary>
+        <p>Yes. Simple art starts at $5 for two nails and custom sets start at $20. Bring a photo and your technician will give you a price before starting.</p>
+      </details>
+      <details>
+        <summary>Should I book a fill or a new full set?</summary>
+        <p>Book a fill if your enhancements are two to three weeks old and still intact. If more than two nails have lifted or broken, or you want a new shape or length, book a full set.</p>
+      </details>
+      <details>
+        <summary>What is your cancellation policy?</summary>
+        <p>Cancel or reschedule free of charge up to 24 hours before your appointment, using the link in your confirmation. Arriving more than 15 minutes late may mean rescheduling.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="band" id="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">Visit</p>
+      <h2>Find us in Toronto.</h2>
+    </div>
+    <div class="visit">
+      <div class="visit-info">
+        <p class="addr">Street address<br>Toronto, ON</p>
+        <div class="contact-list">
+          <span>Phone: <a href="tel:+14165550142" class="phone-text">(416) 555-0142</a></span>
+          <span>Email: <a href="mailto:email@example.com">email@example.com</a></span>
+          <span>Parking: add parking details</span>
+        </div>
+        <div class="ctas">
+          <a class="btn btn-solid" data-book href="#visit">Book online</a>
+          <a class="btn btn-line" id="directions" href="https://www.google.com/maps/search/?api=1&amp;query=Pedi%20N%20Nails%20Howard%20Toronto" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+      <div>
+        <div class="hours-head"><p class="label">Opening hours</p><span class="status" id="status">Checking hours…</span></div>
+        <table class="hours" id="hoursTable" aria-label="Opening hours"><tbody></tbody></table>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div style="display:grid;gap:14px;align-content:start">
+        <a class="brand" href="#top"><b>PEDI N NAILS</b><span>Howard · Toronto</span></a>
+        <p style="max-width:34ch">Manicures, pedicures, enhancements and nail art in a calm, clean studio.</p>
+      </div>
+      <div><h4>Visit</h4><ul><li>Street address</li><li>Toronto, ON</li><li class="phone-text">(416) 555-0142</li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#menu">Services &amp; prices</a></li><li><a href="#work">Gallery</a></li><li><a href="#shades">Shades</a></li><li><a href="#journal">Journal</a></li></ul></div>
+      <div><h4>More</h4><ul><li><a href="#visit">E-Gift Cards</a></li><li><a href="#faq">FAQ &amp; policies</a></li><li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© <span id="year">2026</span> Pedi N Nails Howard</span><span>Privacy policy</span></div>
+  </div>
+</footer>
+
+<div class="action-bar">
+  <a class="btn btn-line" href="tel:+14165550142">Call</a>
+  <a class="btn btn-solid" data-book href="#visit">Book now</a>
+</div>
+
+<script>
+/* ============ SALON DATA: edit this block ============ */
+var SALON = {
+  bookingUrl: "",                  // paste your Fresha / Square / Vagaro / Booksy link here
+  timezone: "America/Toronto",
+  // 0 = Sunday … 6 = Saturday, 24-hour times; null = closed
+  hours: [
+    ["Sunday", "10:00", "18:00"],
+    ["Monday", "09:30", "19:30"],
+    ["Tuesday", "09:30", "19:30"],
+    ["Wednesday", "09:30", "19:30"],
+    ["Thursday", "09:30", "19:30"],
+    ["Friday", "09:30", "19:30"],
+    ["Saturday", "09:30", "19:30"]
+  ],
+  menu: [
+    { name:"Manicures", blurb:"Shaping, cuticle care and a finish in regular polish, gel or dip.", items:[
+      ["Classic Manicure", 30, "$25"], ["Gel Manicure", 45, "$40"], ["Dip Powder Manicure", 50, "$45"] ]},
+    { name:"Pedicures", blurb:"A warm soak, scrub, massage and polish. Take your time.", items:[
+      ["Spa Pedicure", 45, "$35"], ["Deluxe Hot Stone Pedicure", 60, "$55"] ]},
+    { name:"Enhancements", blurb:"Length and strength with Gel-X, acrylic full sets and fills.", items:[
+      ["Gel-X Extensions", 75, "from $65"], ["Acrylic Full Set", 75, "from $55"], ["Acrylic Fill", 60, "from $40"] ]},
+    { name:"Nail Art", blurb:"From a single accent nail to a full custom set, priced by detail.", items:[
+      ["Simple Art (2 nails)", 10, "from $5"], ["Custom Design", 30, "from $20"] ]},
+    { name:"Add-ons & Removal", blurb:"Finishes and extras that pair with any manicure.", items:[
+      ["Chrome or Cat-eye", 10, "$10"], ["Gel Removal", 15, "$10"] ]},
+    { name:"Waxing", blurb:"Quick, clean brow shaping.", items:[
+      ["Eyebrow Wax", 15, "$12"] ]}
+  ],
+  shades: [
+    ["Bare Silk", "#E9CDBE", "Cream"], ["Oatmeal", "#D8C0A5", "Cream"], ["Rosewater", "#EDBFC2", "Sheer"],
+    ["Petal Hour", "#D98A9A", "Cream"], ["Berry Velvet", "#8E2344", "Cream"], ["Persimmon", "#D2563F", "Gloss"],
+    ["Cinnamon Tea", "#8A4B32", "Cream"], ["Sage Leaf", "#9AAA8C", "Cat-eye"], ["Lagoon", "#2F6F73", "Shimmer"],
+    ["Night Orchid", "#4B2B4F", "Shimmer"], ["Gilded", "#C9A96A", "Chrome"], ["Ink", "#1F1B24", "Cream"]
+  ]
+};
+/* ===================================================== */
+
+(function(){
+  function el(tag, cls, text){ var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  /* booking links */
+  if (SALON.bookingUrl){
+    document.querySelectorAll("[data-book]").forEach(function(a){ a.href = SALON.bookingUrl; a.target = "_blank"; a.rel = "noopener"; });
+  }
+
+  /* mobile menu */
+  var menuBtn = document.getElementById("menuBtn"), mobileNav = document.getElementById("mobileNav");
+  menuBtn.addEventListener("click", function(){
+    var open = mobileNav.hidden;
+    mobileNav.hidden = !open;
+    menuBtn.setAttribute("aria-expanded", String(open));
+    menuBtn.textContent = open ? "Close" : "Menu";
+  });
+  mobileNav.addEventListener("click", function(e){ if (e.target.tagName === "A"){ mobileNav.hidden = true; menuBtn.setAttribute("aria-expanded","false"); menuBtn.textContent = "Menu"; } });
+
+  /* menu rows */
+  function priceNum(p){ var m = String(p).match(/\d+/); return m ? +m[0] : 0; }
+  var list = document.getElementById("menuList"), rows = [];
+  SALON.menu.forEach(function(cat, i){
+    var row = el("div", "row");
+    var btn = el("button", "row-btn"); btn.type = "button"; btn.setAttribute("aria-expanded", "false");
+    var low = Math.min.apply(null, cat.items.map(function(it){ return priceNum(it[2]); }));
+    var num = el("span", "num", String(i + 1).padStart(2, "0"));
+    var h = el("h3", null, cat.name);
+    var p = el("p", null, cat.blurb);
+    var from = el("span", "from"); from.appendChild(document.createTextNode("From $" + low)); from.appendChild(el("span", "arrow", "→"));
+    btn.append(num, h, p, from);
+    var items = el("div", "items"); items.hidden = true; items.id = "cat-" + i;
+    btn.setAttribute("aria-controls", items.id);
+    cat.items.forEach(function(it){
+      var r = el("div", "item");
+      r.append(el("b", null, it[0]), el("span", "dur", it[1] + " min"), el("span", "price", it[2]));
+      items.appendChild(r);
+    });
+    btn.addEventListener("click", function(){ toggle(i); });
+    row.append(btn, items);
+    list.appendChild(row);
+    rows.push({ row:row, btn:btn, items:items });
+  });
+  function toggle(i, forceOpen){
+    var r = rows[i], open = forceOpen != null ? forceOpen : r.items.hidden;
+    r.items.hidden = !open; r.row.classList.toggle("open", open); r.btn.setAttribute("aria-expanded", String(open));
+  }
+  toggle(0, true);
+  document.querySelectorAll(".cats a[data-open]").forEach(function(a){
+    a.addEventListener("click", function(){ toggle(+a.dataset.open, true); });
+  });
+
+  /* shades */
+  var grid = document.getElementById("shadeGrid"), pickedText = document.getElementById("pickedText"), shadeBtns = [];
+  SALON.shades.forEach(function(s){
+    var b = el("button", "shade"); b.type = "button"; b.setAttribute("aria-pressed", "false");
+    var chip = el("span", "chip"); chip.style.setProperty("--c", s[1]);
+    b.append(chip, el("b", null, s[0]), el("span", null, s[2]));
+    b.addEventListener("click", function(){
+      shadeBtns.forEach(function(x){ x.setAttribute("aria-pressed", "false"); });
+      b.setAttribute("aria-pressed", "true");
+      pickedText.textContent = "";
+      pickedText.append("Your shade: ", el("b", null, s[0]), " · " + s[2].toLowerCase() + " finish. Mention it in your booking notes.");
+    });
+    shadeBtns.push(b); grid.appendChild(b);
+  });
+
+  /* hours + open now (in the salon's time zone) */
+  function toMin(t){ var p = t.split(":"); return +p[0] * 60 + +p[1]; }
+  function fmt(t){
+    var m = toMin(t), h = Math.floor(m / 60), mm = m % 60, ap = h >= 12 ? "pm" : "am";
+    h = h % 12 || 12; return h + (mm ? ":" + String(mm).padStart(2, "0") : "") + " " + ap;
+  }
+  var now = new Date(), day = now.getDay(), mins = now.getHours() * 60 + now.getMinutes();
+  try {
+    var parts = new Intl.DateTimeFormat("en-US", { timeZone: SALON.timezone, weekday:"short", hour:"numeric", minute:"numeric", hourCycle:"h23" }).formatToParts(now);
+    var get = function(t){ var f = parts.find(function(x){ return x.type === t; }); return f ? f.value : null; };
+    var wd = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(get("weekday"));
+    if (wd >= 0){ day = wd; mins = (+get("hour") % 24) * 60 + +get("minute"); }
+  } catch(e){}
+
+  var tbody = document.querySelector("#hoursTable tbody");
+  [1,2,3,4,5,6,0].forEach(function(d){
+    var h = SALON.hours[d], tr = el("tr", d === day ? "today" : "");
+    tr.append(el("td", null, h[0] + (d === day ? " (today)" : "")), el("td", null, h[1] ? fmt(h[1]) + " – " + fmt(h[2]) : "Closed"));
+    tbody.appendChild(tr);
+  });
+
+  var today = SALON.hours[day], text, cls;
+  if (today[1] && mins >= toMin(today[1]) && mins < toMin(today[2])){
+    text = "Open now · until " + fmt(today[2]); cls = "is-open";
+  } else {
+    var next = null;
+    if (today[1] && mins < toMin(today[1])) next = "today at " + fmt(today[1]);
+    else for (var k = 1; k <= 7; k++){ var nd = SALON.hours[(day + k) % 7]; if (nd[1]){ next = (k === 1 ? "tomorrow" : nd[0]) + " at " + fmt(nd[1]); break; } }
+    text = "Closed now" + (next ? " · opens " + next : ""); cls = "is-closed";
+  }
+  ["status","statusInline"].forEach(function(id){ var s = document.getElementById(id); s.textContent = text; s.classList.add(cls); });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

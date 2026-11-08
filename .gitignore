@@ -1,0 +1,13 @@
+# OS / editor noise
+.DS_Store
+.vscode/
+.idea/
+
+# Secrets
+.env*
+
+# Dependencies and builds (if added later)
+node_modules/
+dist/
+.netlify/
+.vercel/
