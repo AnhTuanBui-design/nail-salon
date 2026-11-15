@@ -38,12 +38,6 @@ var SALON = {
         { name: "Deluxe Hot Stone Pedicure", min: 60, price: 55, desc: "Our longest pedicure, with warm stones and paraffin for tired feet." },
         { name: "Gel Pedicure",              min: 50, price: 50, desc: "Classic pedicure finished in gel colour that lasts for weeks." }
       ] },
-    { id: "combos", name: "Combos",
-      blurb: "Hands and feet together, priced lower than booking each one.",
-      items: [
-        { name: "Classic Mani + Pedi",   min: 60, price: 55, desc: "Classic manicure and classic pedicure in one visit." },
-        { name: "Gel Mani + Spa Pedi",   min: 90, price: 80, desc: "Gel manicure with the full spa pedicure." }
-      ] },
     { id: "enhancements", name: "Enhancements",
       blurb: "Length and strength with Gel-X, acrylic and builder gel.",
       items: [
@@ -51,6 +45,12 @@ var SALON = {
         { name: "Acrylic Full Set",     min: 75, price: 55, from: true, desc: "Classic acrylic extensions in any shape, finished in gel colour." },
         { name: "Acrylic Fill",         min: 60, price: 40, from: true, desc: "Fills the regrowth on a set that is two to three weeks old." },
         { name: "Builder Gel Overlay",  min: 60, price: 50, from: true, desc: "Strengthens natural nails without adding length." }
+      ] },
+    { id: "combos", name: "Combos",
+      blurb: "Hands and feet together, priced lower than booking each one.",
+      items: [
+        { name: "Classic Mani + Pedi",   min: 60, price: 55, desc: "Classic manicure and classic pedicure in one visit." },
+        { name: "Gel Mani + Spa Pedi",   min: 90, price: 80, desc: "Gel manicure with the full spa pedicure." }
       ] },
     { id: "nail-art", name: "Nail Art",
       blurb: "From a single accent nail to a full custom set, priced by detail.",
