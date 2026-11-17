@@ -8,6 +8,19 @@ var SALON = {
   bookingUrl: "",                 // paste your Fresha / Square / Vagaro / Booksy link here
   timezone: "America/Toronto",
 
+  // Contact details (PLACEHOLDERS). Used by the mobile menu, the Call buttons and the maps.
+  phone: "+14165550142",          // digits only, used for tel: links
+  phoneDisplay: "(416) 555-0142",
+  address: ["Street address", "Toronto, ON"],
+  mapQuery: "Pedi N Nails Howard, Toronto, ON",   // what Google Maps searches for
+  instagram: "https://www.instagram.com/",
+  facebook: "https://www.facebook.com/",
+
+  // Homepage hero background. Leave empty to keep the drawn placeholder.
+  // heroVideo: a short, silent .mp4 loop (5–15 s, under ~4 MB). heroImage: shown while the video loads, and on its own if no video.
+  heroVideo: "",
+  heroImage: "",
+
   // 0 = Sunday … 6 = Saturday. 24-hour times. Use [day, null, null] for closed days.
   hours: [
     ["Sunday",    "10:00", "18:00"],
@@ -85,7 +98,7 @@ var SALON = {
       ] }
   ],
 
-  // [name, colour, finish, family]. The homepage shows the first 12.
+  // [name, colour, finish, family]. The homepage shows the first 8.
   shadeFamilies: ["Nudes", "Pinks", "Reds", "Browns", "Purples", "Blues & greens", "Metallics", "Darks"],
   shades: [
     ["Bare Silk", "#E9CDBE", "Cream", "Nudes"], ["Oatmeal", "#D8C0A5", "Cream", "Nudes"], ["Rosewater", "#EDBFC2", "Sheer", "Pinks"],
