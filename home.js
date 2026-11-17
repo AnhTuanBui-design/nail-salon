@@ -2,6 +2,23 @@
 (function () {
   var el = window.siteEl;
 
+  /* Hero background: a real photo and/or a silent looping video, set in salon-data.js */
+  var media = document.querySelector(".hero .ph");
+  if (media && (SALON.heroImage || SALON.heroVideo)) {
+    media.classList.add("has-media");
+    media.textContent = "";
+    if (SALON.heroImage) media.style.backgroundImage = "url('" + SALON.heroImage + "')";
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (SALON.heroVideo && !reduce) {
+      var v = document.createElement("video");
+      v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true; v.setAttribute("playsinline", "");
+      if (SALON.heroImage) v.poster = SALON.heroImage;
+      v.src = SALON.heroVideo;
+      media.appendChild(v);
+    }
+    var tag = document.querySelector(".hero > .tag"); if (tag) tag.remove();
+  }
+
   /* Menu preview: one numbered row per category, tap to see its services */
   var list = document.getElementById("menuList"), rows = [];
   if (list) {
@@ -37,9 +54,9 @@
   /* Shade picker */
   var grid = document.getElementById("shadeGrid"), pickedText = document.getElementById("pickedText"), shadeBtns = [];
   if (grid) {
-    SALON.shades.slice(0, 12).forEach(function (s) {
+    SALON.shades.slice(0, 8).forEach(function (s) {
       var b = el("button", "shade"); b.type = "button"; b.setAttribute("aria-pressed", "false");
-      var chip = el("span", "chip"); chip.style.setProperty("--c", s[1]);
+      var chip = el("span", "chip"); chip.style.setProperty("--c", s[1]); chip.dataset.finish = s[2].toLowerCase();
       b.append(chip, el("b", null, s[0]), el("span", null, s[2]));
       b.addEventListener("click", function () {
         shadeBtns.forEach(function (x) { x.setAttribute("aria-pressed", "false"); });

@@ -8,7 +8,7 @@
 
   function select(s, btn) {
     all.forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
-    pvChip.style.setProperty("--c", s[1]);
+    pvChip.style.setProperty("--c", s[1]); pvChip.dataset.finish = s[2].toLowerCase();
     pvName.textContent = s[0];
     pvMeta.textContent = s[2] + " finish · " + s[3];
   }
@@ -22,7 +22,7 @@
     var grid = el("div", "shades");
     list.forEach(function (s) {
       var b = el("button", "shade"); b.type = "button"; b.setAttribute("aria-pressed", "false");
-      var chip = el("span", "chip"); chip.style.setProperty("--c", s[1]);
+      var chip = el("span", "chip"); chip.style.setProperty("--c", s[1]); chip.dataset.finish = s[2].toLowerCase();
       b.append(chip, el("b", null, s[0]), el("span", null, s[2]));
       b.addEventListener("click", function () { select(s, b); });
       all.push(b); grid.appendChild(b);
