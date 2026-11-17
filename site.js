@@ -69,12 +69,12 @@
     onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  /* Mobile bottom bar: big Book now, small Call with an icon. Hidden over the footer and the Visit section, which have their own buttons. */
+  /* Mobile bottom bar: big Book now, small Call with an icon. Hidden while the hero, the Visit section or the footer is on screen, since they have their own buttons. */
   var bar = document.querySelector(".action-bar");
   if (bar) {
     var barCall = bar.querySelector('a[href^="tel:"]');
     if (barCall) { barCall.href = tel; barCall.classList.add("bar-call"); barCall.textContent = ""; barCall.append(icon(ICON_PHONE), el("span", null, "Call")); barCall.setAttribute("aria-label", "Call " + SALON.phoneDisplay); }
-    var targets = document.querySelectorAll("footer, #visit");
+    var targets = document.querySelectorAll(".hero, footer, #visit");
     if (targets.length && "IntersectionObserver" in window) {
       var seen = new Set();
       var io = new IntersectionObserver(function (entries) {
