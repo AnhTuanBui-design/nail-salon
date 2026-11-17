@@ -16,7 +16,7 @@
       btn.setAttribute("aria-controls", items.id);
       cat.items.forEach(function (it) {
         var r = el("div", "item");
-        r.append(el("b", null, it.name), el("span", "dur", SALON.formatMinutes(it.min)), el("span", "price", SALON.formatPrice(it)));
+        r.append(el("b", null, it.name), el("span", "price", SALON.formatPrice(it)));
         items.appendChild(r);
       });
       var more = el("a", "item more", "See full details on the services page →");

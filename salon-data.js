@@ -1,7 +1,7 @@
 /* =====================================================================
-   SALON DATA: edit this file to change hours, services, prices and shades.
+   SALON DATA: edit this file to change hours, services, prices, social links and shades.
    Every page reads from here, so a change shows up everywhere at once.
-   All prices, times and hours below are PLACEHOLDERS until confirmed.
+   Services and prices follow the Pedi N Nails Dundas East menu. Hours are PLACEHOLDERS until confirmed.
    ===================================================================== */
 var SALON = {
   name: "Pedi N Nails Howard",
@@ -19,69 +19,102 @@ var SALON = {
     ["Saturday",  "09:30", "19:30"]
   ],
 
-  // id: used in links (services.html#id). min: minutes. price: dollars.
-  // from: true shows "from $X" because the price depends on length or design.
+  // Social links. The footer on every page reads these, so change them here once.
+  social: {
+    instagram: { handle: "@pedinnailshoward", url: "https://www.instagram.com/" },
+    facebook:  { label: "Facebook",          url: "https://www.facebook.com/" }
+  },
+
+  // id: used in links (services.html#id). price: dollars, used for the "from" price and the visit total.
+  // from: true adds "+" because the final price depends on length or design.
+  // label: optional, shown instead of the price when a service has several prices ("$15 / $20").
+  // upgrade: true for add-ons that sit inside a category but are left out of its "From $" price.
+  // desc: optional. Leave it out for a short name-and-price line (like waxing).
   menu: [
-    { id: "manicures", name: "Manicures",
-      blurb: "Shaping, cuticle care and a finish in regular polish, gel or dip.",
+    { id: "manicures", name: "Hand Treatment",
+      blurb: "Natural-nail care for hands, finished in regular polish or long-wearing shellac.",
       items: [
-        { name: "Classic Manicure",     min: 30, price: 25, desc: "Shape, cuticle care, a short hand massage and regular polish." },
-        { name: "Gel Manicure",         min: 45, price: 40, desc: "Glossy gel colour cured under a lamp. Lasts two to three weeks." },
-        { name: "Dip Powder Manicure",  min: 50, price: 45, desc: "Strong, chip-resistant powder colour on your natural nails." },
-        { name: "Polish Change",        min: 15, price: 15, desc: "Fresh regular polish on hands. No cuticle work." }
+        { name: "Manicure",         price: 29, desc: "Natural nail shaping and tidy-up with classic manicure care and a polished finish." },
+        { name: "Shellac Manicure", price: 40, desc: "A manicure finished with durable gel polish cured for a glossy, longer-lasting finish." }
       ] },
-    { id: "pedicures", name: "Pedicures",
-      blurb: "A warm soak, scrub, massage and polish. Take your time.",
+    { id: "pedicures", name: "Foot Treatment",
+      blurb: "Classic and deluxe pedicures, finished in regular polish or shellac.",
       items: [
-        { name: "Classic Pedicure",          min: 35, price: 35, desc: "Soak, nail and cuticle care, light scrub and regular polish." },
-        { name: "Spa Pedicure",              min: 45, price: 45, desc: "Adds a sugar scrub, mask, hot towels and a longer massage." },
-        { name: "Deluxe Hot Stone Pedicure", min: 60, price: 55, desc: "Our longest pedicure, with warm stones and paraffin for tired feet." },
-        { name: "Gel Pedicure",              min: 50, price: 50, desc: "Classic pedicure finished in gel colour that lasts for weeks." }
+        { name: "Pedicure",                         price: 40, desc: "Classic foot and nail care finished with regular polish." },
+        { name: "Shellac Pedicure",                 price: 50, desc: "Pedicure care completed with glossy, durable gel polish." },
+        { name: "Deluxe Pedicure (Regular Polish)", price: 65, desc: "An upgraded pedicure experience with additional care beyond the classic service, finished with regular polish." },
+        { name: "Deluxe Shellac Pedicure",          price: 75, desc: "The deluxe pedicure experience finished with long-wearing shellac gel polish." }
       ] },
-    { id: "combos", name: "Combos",
-      blurb: "Hands and feet together, priced lower than booking each one.",
+    { id: "combos", name: "Combo Promotion",
+      blurb: "Hands and feet in a single visit.",
+      note: "Deluxe Add On applies to eligible services. The salon confirms eligibility when you book.",
       items: [
-        { name: "Classic Mani + Pedi",   min: 60, price: 55, desc: "Classic manicure and classic pedicure in one visit." },
-        { name: "Gel Mani + Spa Pedi",   min: 90, price: 80, desc: "Gel manicure with the full spa pedicure." }
+        { name: "Manicure & Pedicure",                 price: 60, desc: "Classic manicure and pedicure combined into one visit." },
+        { name: "Shellac Manicure & Regular Pedicure", price: 75, desc: "Shellac manicure paired with a classic regular-polish pedicure." },
+        { name: "Shellac Manicure & Shellac Pedicure", price: 85, desc: "Gel-polish manicure and pedicure combined for longer-lasting colour." },
+        { name: "Deluxe Add On",                       price: 25, upgrade: true, desc: "Upgrade an eligible service to the deluxe experience." }
       ] },
-    { id: "enhancements", name: "Enhancements",
-      blurb: "Length and strength with Gel-X, acrylic and builder gel.",
+    { id: "enhancements", name: "Nail Enhancement",
+      blurb: "Structure, strength and length with acrylic, UV gel, Bio Gel, Gel-X and dipping systems.",
+      note: "Prices marked + are starting prices. The final cost depends on length, shape and design.",
       items: [
-        { name: "Gel-X Extensions",     min: 75, price: 65, from: true, desc: "Soft gel tips for natural-looking length. Price depends on length." },
-        { name: "Acrylic Full Set",     min: 75, price: 55, from: true, desc: "Classic acrylic extensions in any shape, finished in gel colour." },
-        { name: "Acrylic Fill",         min: 60, price: 40, from: true, desc: "Fills the regrowth on a set that is two to three weeks old." },
-        { name: "Builder Gel Overlay",  min: 60, price: 50, from: true, desc: "Strengthens natural nails without adding length." }
+        { name: "Acrylic / UV Full Set",        price: 55, from: true, desc: "A full enhancement set designed to add length, structure and a defined shape." },
+        { name: "Acrylic / UV Refill",          price: 45, from: true, desc: "Maintenance for existing acrylic or UV enhancements: the grown-out area is refreshed and the shape restored." },
+        { name: "Bio Gel Full Set",             price: 65, from: true, desc: "A gel enhancement designed to create added structure and/or length with a smooth finished appearance." },
+        { name: "Bio Gel Refill",               price: 50, from: true, desc: "Maintenance for an existing Bio Gel set, refreshing the growth area and restoring the finish." },
+        { name: "Bio Gel Overlay",              price: 60, desc: "Bio Gel applied over the natural nails for reinforcement without a traditional extension." },
+        { name: "Gel-X Full Set",               price: 65, from: true, desc: "A full-cover soft-gel extension system used to create added length and a consistent shape." },
+        { name: "Gel-X Refill",                 price: 50, from: true, desc: "Maintenance for eligible existing Gel-X enhancements." },
+        { name: "Dipping Overlay",              price: 55, from: true, desc: "A strengthening overlay using dipping powder over the natural nail." },
+        { name: "Toe Nail Extension + Pedi",    price: 90, desc: "Pedicure paired with toenail extension work where additional length or reconstruction is needed." },
+        { name: "Shellac Change on Fake Nails", price: 35, desc: "Colour change with shellac gel polish on existing artificial nails." },
+        { name: "French / Cat-eye / Chrome",    price: 15, upgrade: true, label: "$15 / $20", desc: "Specialty finish upgrades. The price depends on the finish you choose." },
+        { name: "Ombre",                        price: 20, upgrade: true, desc: "A gradient colour effect that transitions smoothly between shades." }
       ] },
-    { id: "nail-art", name: "Nail Art",
-      blurb: "From a single accent nail to a full custom set, priced by detail.",
+    { id: "add-ons", name: "Extras",
+      blurb: "Removals, polish changes, shaping and finishing touches.",
       items: [
-        { name: "Simple Art (2 nails)", min: 10, price: 5,  from: true, desc: "Dots, lines, a small flower or a single sticker design." },
-        { name: "French Tips",          min: 15, price: 10, desc: "Classic white, coloured or micro French on any manicure." },
-        { name: "Chrome or Cat-eye",    min: 10, price: 10, desc: "Mirror chrome powder or a magnetic cat-eye finish." },
-        { name: "Custom Design",        min: 30, price: 20, from: true, desc: "Bring a photo. We'll quote before we start." }
-      ] },
-    { id: "add-ons", name: "Add-ons & Removal",
-      blurb: "Extras and removals that pair with any service.",
-      items: [
-        { name: "Gel Removal",              min: 15, price: 10, desc: "Gentle soak-off of gel or dip polish." },
-        { name: "Acrylic or Gel-X Removal", min: 30, price: 20, desc: "Safe removal of extensions without damaging the natural nail." },
-        { name: "Nail Repair",              min: 10, price: 5,  desc: "Fix one broken or lifted nail." },
-        { name: "Paraffin Treatment",       min: 10, price: 10, desc: "Warm paraffin wax for dry hands or feet." }
+        { name: "Design",                       price: 10, from: true, desc: "Custom nail art. The final cost depends on the detail." },
+        { name: "Fake Nail Removal",            price: 20, desc: "Removal of existing artificial nail enhancements." },
+        { name: "Shellac Removal",              price: 10, desc: "Removal of existing shellac gel polish." },
+        { name: "Manicure Add On",              price: 10, desc: "Add manicure care to an eligible nail service." },
+        { name: "Cutting & Shaping",            price: 15, from: true, desc: "Reshaping and length adjustment of the nails." },
+        { name: "Regular Polish Change",        price: 22, desc: "Refresh existing colour with regular polish." },
+        { name: "Shellac Change on Real Nails", price: 30, desc: "Gel-polish colour change on natural nails." },
+        { name: "French on Real Nails",         price: 8,  desc: "French-tip finish on natural nails." }
       ] },
     { id: "waxing", name: "Waxing",
-      blurb: "Quick, clean facial and body waxing.",
+      blurb: "Brow, face and body waxing, plus eyebrow tinting.",
       items: [
-        { name: "Eyebrow Wax",  min: 15, price: 12, desc: "Shape and clean up the brows." },
-        { name: "Lip Wax",      min: 10, price: 8,  desc: "Upper lip." },
-        { name: "Full Face Wax",min: 30, price: 35, desc: "Brows, lip, chin and sides of the face." },
-        { name: "Underarm Wax", min: 15, price: 20, desc: "Both underarms." }
+        { name: "Eyebrows",                   price: 15 },
+        { name: "Lips",                       price: 8 },
+        { name: "Sideburn",                   price: 10 },
+        { name: "Chin",                       price: 10 },
+        { name: "Eyebrows, Lips & Chin",      price: 30 },
+        { name: "Full Face",                  price: 35 },
+        { name: "Under Arm",                  price: 15 },
+        { name: "Half Arm / Full Arm",        price: 25, label: "$25 / $35" },
+        { name: "Half Leg / Full Leg",        price: 30, label: "$30 / $50" },
+        { name: "Bikini",                     price: 30 },
+        { name: "Brazilian",                  price: 45 },
+        { name: "Belly / Back / Chest",       price: 15, label: "$15 / $40 / $35+" },
+        { name: "Eyebrow Tinting",            price: 15 },
+        { name: "Eyebrow Tinting & Shaping",  price: 30 }
+      ] },
+    { id: "spa", name: "Spa",
+      blurb: "Focused facial appointments.",
+      items: [
+        { name: "Mini Facial (30 mins)",     price: 50, desc: "A shorter facial for a focused skin-care appointment." },
+        { name: "Deep Cleansing (60 mins)",  price: 80, desc: "A longer facial centred on deeper cleansing and skin care." }
       ] },
     { id: "kids", name: "Kids Under 10",
-      blurb: "Gentle, quick services for little hands and feet.",
+      blurb: "Gentle nail services for children under 10.",
       items: [
-        { name: "Kids Manicure",     min: 20, price: 15, desc: "Shape and regular polish. Fun colours welcome." },
-        { name: "Kids Pedicure",     min: 30, price: 25, desc: "Short soak, nail care and polish." },
-        { name: "Kids Polish Change",min: 10, price: 12, desc: "Fresh colour on hands or toes." }
+        { name: "Regular / Shellac Manicure", price: 20, label: "$20 / $30" },
+        { name: "Regular / Shellac Pedicure", price: 30, label: "$30 / $40" },
+        { name: "Regular Mani & Pedi",        price: 45 },
+        { name: "Shellac Mani & Pedi",        price: 70 },
+        { name: "Polish Change",              price: 12 }
       ] }
   ],
 
@@ -101,11 +134,8 @@ var SALON = {
 };
 
 /* Helpers shared by every page */
-SALON.formatPrice = function (it) { return (it.from ? "from $" : "$") + it.price; };
-SALON.formatMinutes = function (m) {
-  var h = Math.floor(m / 60), r = m % 60;
-  return h ? h + " h" + (r ? " " + r + " min" : "") : r + " min";
-};
+SALON.formatPrice = function (it) { return it.label || "$" + it.price + (it.from ? "+" : ""); };
 SALON.lowestPrice = function (cat) {
-  return Math.min.apply(null, cat.items.map(function (it) { return it.price; }));
+  var items = cat.items.filter(function (it) { return !it.upgrade; });
+  return Math.min.apply(null, (items.length ? items : cat.items).map(function (it) { return it.price; }));
 };

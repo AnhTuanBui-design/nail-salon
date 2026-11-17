@@ -10,6 +10,16 @@
     });
   }
 
+  /* Social links in the footer come from SALON.social, so one edit updates every page */
+  if (SALON.social) {
+    document.querySelectorAll("[data-social]").forEach(function (a) {
+      var s = SALON.social[a.getAttribute("data-social")];
+      if (!s) { a.parentNode.hidden = true; return; }
+      a.href = s.url;
+      var t = a.querySelector("span"); if (t) t.textContent = s.handle || s.label;
+    });
+  }
+
   /* Mobile menu */
   var menuBtn = document.getElementById("menuBtn"), mobileNav = document.getElementById("mobileNav");
   if (menuBtn && mobileNav) {
