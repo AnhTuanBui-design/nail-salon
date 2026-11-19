@@ -14,3 +14,7 @@ dist/
 
 # Local editor/agent config
 .claude/
+
+# Cloudflare Workers: local cache and local secrets (never commit these)
+.wrangler/
+.dev.vars*

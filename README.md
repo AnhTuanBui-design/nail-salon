@@ -4,7 +4,7 @@ Website for Pedi N Nails Howard, a nail salon in Toronto. Calm, editorial style:
 
 Plain HTML, CSS and JavaScript. No build step and nothing to install.
 
-**Live (draft):** https://anhtuanbui-design.github.io/nail-salon/
+**Live (draft):** https://pedinnailshoward.com
 
 ## Pages
 
@@ -77,13 +77,23 @@ Contact details are written straight into the pages. Search all `.html` files fo
 
 ## Hosting
 
-The site is on **GitHub Pages**, published from the `main` branch, root folder (repository Settings → Pages). Every push to `main` updates the live site within a minute or two.
+The site runs on **Cloudflare Workers** at https://pedinnailshoward.com. Cloudflare also manages the domain's DNS; the domain itself is registered at GoDaddy.
 
-- Live address: https://anhtuanbui-design.github.io/nail-salon/
-- `.nojekyll` tells GitHub to serve the files as they are, with no Jekyll build.
+- Every push to `main` deploys automatically (Cloudflare dashboard → Workers & Pages → `nail-salon` → Deployments).
+- `wrangler.jsonc` holds the Workers settings. Missing pages show `404.html`.
+- `.assetsignore` lists files that stay in the repo but are **not** published: `README.md`, `blueprint.html`, config files.
+- Page addresses drop `.html`: `/services.html` redirects to `/services`.
 - While the content is placeholder, every page has a `noindex` tag so search engines don't list it.
 
-To use your own domain (for example `pedinnailshoward.com`): buy it from any registrar, enter it under Settings → Pages → Custom domain, then add the DNS records GitHub shows you at the registrar. Keep "Enforce HTTPS" ticked.
+Preview exactly as Cloudflare serves it (needs Node.js):
+
+```bash
+npx wrangler dev
+```
+
+Then go to http://localhost:8787.
+
+Secret keys (for example Stripe) go in the Cloudflare dashboard under the Worker's **Settings → Variables and Secrets**, never in the code. For local testing, put them in a `.dev.vars` file, which git ignores.
 
 ## Status
 
