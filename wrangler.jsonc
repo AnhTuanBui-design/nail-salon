@@ -1,0 +1,12 @@
+// Cloudflare Workers settings. The site is plain files with no build step:
+// Cloudflare publishes this folder as-is (minus what .assetsignore lists).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "nail-salon",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": ".",
+    // Missing pages show 404.html with a real 404 status.
+    "not_found_handling": "404-page"
+  }
+}

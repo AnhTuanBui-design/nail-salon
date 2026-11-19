@@ -1,0 +1,15 @@
+# Files in the repo that must NOT be published on the website.
+.git
+.gitignore
+.assetsignore
+.nojekyll
+.wrangler
+.dev.vars*
+.env*
+.claude
+.DS_Store
+node_modules
+wrangler.jsonc
+README.md
+# Internal website plan and AI prompt pack, kept in the repo but not public
+blueprint.html
